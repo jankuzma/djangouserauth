@@ -16,10 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from hello.views import hello
+from hello.views import hello, GenreListView, AddGenreView, AddPersonView, AddProducerView, ProducerListView
 
 urlpatterns = [
 
     path('', hello, name='hello'),
     path('accounts/', include('accounts.urls')),
+    path('genre/list/', GenreListView.as_view(), name='genrelist'),
+    path('genre/add/', AddGenreView.as_view(), name='addgenre'),
+    path('person/add/', AddPersonView.as_view(), name='addperson'),
+    path('producer/add/', AddProducerView.as_view(), name='producerform'),
+    path('producer/list/', ProducerListView.as_view(), name='producerlist')
+
 ]
