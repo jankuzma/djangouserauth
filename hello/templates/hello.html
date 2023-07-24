@@ -1,2 +1,11 @@
-{% csrf_token %}
-<h2>hello, {{ user }}</h2>
+{% extends 'base.html' %}
+{% block content %}
+    {% if user.is_authenticated %}
+    {% csrf_token %}
+    <h2> logged in as {{ user }}</h2>
+        <a href="{% url 'logout' %}">wyloguj</a>
+    {% else %}
+        <h2> you are not logged in</h2>
+        <a href="{% url 'login' %}">zaloguj</a>
+    {% endif %}
+{% endblock %}
