@@ -1,2 +1,1 @@
-# djangouserauth
-## Learning django authentication
+# Learning Django authentication
